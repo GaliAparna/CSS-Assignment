@@ -1,20 +1,55 @@
-<html>
-  <head>Operations</head>
-  <body>
-    Enter Your FirstNumber:
-      <input type="number" placeholder="type your fnumber"[(ngModel)]="FirstNumber"><br>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body><h2>Welcome</h2>
+  <div> 
+    Enter Topic :
+    <input type="text" placeholder="topic name" #currentTopic/>
+    <button type="button" (click)="addTopic(currentTopic.value)">Add</button>
     
+    <button type="button" (click)="searchTopic(currentTopic.value)">Search</button>
+    <button type="button" (click)="deleteTopic(currentTopic.value)">Delete</button>
+  </div>
+  <br>
+  <table >
+    <thead >
+      <tr >
+        <td>
+          Topic Id
+        </td>
+        <td>
+          Topic Name
+        </td>
+        <td>
+          Action
+        </td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let i=index ;let topic of topics">
+        <td> 
+          {{i+1}}
 
-      Enter Your SecondNumber:
-      <input type="number" placeholder="type your snumber"[(ngModel)]="SecondNumber"><br>
-
-      Enter Your Result:
-      <input type="number" [(ngModel)]="result"><br>
-      <button (click)="getAdd()">Add</button>
-      <button (click)="getSub()">Sub</button>
-      <button (click)="getMul()">Mul</button>
-      <button (click)="getDiv()">Div</button>
-      
-      
-  </body>
+        </td>
+        <td>
+          {{topic}}
+        </td>
+        <td>
+          <button type="button" (click)="delTopic(i)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+       <td colspan="3" >Number of topics : {{topics.length}}</td>
+      </tr>
+    </tfoot>
+  </table>
+  
+</body>
 </html>

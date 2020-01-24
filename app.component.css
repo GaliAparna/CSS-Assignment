@@ -1,0 +1,23 @@
+table, th, td {
+    border: 1px solid black;
+  }
+  
+  table {
+    width: 50%;
+  }
+  
+  th {
+    height: 50px;
+    
+  }
+  body {
+    color:wheat;
+    text-align: center;
+  }
+  form.topics::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+  
