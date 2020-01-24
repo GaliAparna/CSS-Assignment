@@ -1,0 +1,20 @@
+<html>
+  <head>Operations</head>
+  <body>
+    Enter Your FirstNumber:
+      <input type="number" placeholder="type your fnumber"[(ngModel)]="FirstNumber"><br>
+    
+
+      Enter Your SecondNumber:
+      <input type="number" placeholder="type your snumber"[(ngModel)]="SecondNumber"><br>
+
+      Enter Your Result:
+      <input type="number" [(ngModel)]="result"><br>
+      <button (click)="getAdd()">Add</button>
+      <button (click)="getSub()">Sub</button>
+      <button (click)="getMul()">Mul</button>
+      <button (click)="getDiv()">Div</button>
+      
+      
+  </body>
+</html>
